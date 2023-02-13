@@ -4,7 +4,7 @@ steps:
   args: [ 'build', '-t', 'us-west2-docker.pkg.dev/ml-projects-jesusjimenezg/language-detection-app/app-image:tag1', '.' ]
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'us-west2-docker.pkg.dev/ml-projects-jesusjimenezg/language-detection-app/app-image:tag1']
-- name: gcr.io/ml-projects-jesusjimenezg/language-detection-app
+- name: 'gcr.io/cloud-builders/docker'
   args: ['run', 'deploy', '${_SERVICE_NAME}', '--image', 'gcr.io/$PROJECT_ID/${_SERVICE_NAME}:${SHORT_SHA}', '--region', 'us-west2', '--platform', 'managed', "--allow-unauthenticated"]
 
 # images:

@@ -1,8 +1,8 @@
 steps:
 # Build container image
-- name: gcr.io/language-detection-app
+- name: gcr.io/ml-projects-jesusjimenezg
   args: ['build', '-t', 'gcr.io/$PROJECT_ID/$(_SERVICE_NAME)', '.']
-- name: gcr.io/language-detection-app
+- name: gcr.io/ml-projects-jesusjimenezg
   args: ['push', 'gcr.io/$PROJECT_ID/$(_SERVICE_NAME)']
-- name: gcr.io/language-detection-app
+- name: gcr.io/ml-projects-jesusjimenezg
   args: ['run', 'deploy', '${_SERVICE_NAME}', '--image', 'gcr.io/$PROJECT_ID/${_SERVICE_NAME}:${SHORT_SHA}', '--region', 'us-central1', '--platform', 'managed', "--allow-unauthenticated"]

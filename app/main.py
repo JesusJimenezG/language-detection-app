@@ -4,7 +4,7 @@ from app.model.model import predict_pipeline
 from app.model.model import __version__ as model_version
 from typing import Dict
 
-app = FastAPI()
+app = FastAPI(docs_url=None, redoc_url=None)
 
 
 class TextIn(BaseModel):
